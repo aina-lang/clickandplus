@@ -2,22 +2,21 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import CashbackHelpIcon from "@/assets/icons/deal-adidas-bg.svg";
-import CodesPromoIcon from "@/assets/icons/deal-adidas-bg.svg";
-import ReferralHelpIcon from "@/assets/icons/deal-adidas-bg.svg";
-import TechIcon from "@/assets/icons/deal-adidas-bg.svg";
-import AdidaasLogoIcon from "@/assets/icons/deal-adidas-bg.svg";
-import AsusLogoIcon from "@/assets/icons/deal-adidas-bg.svg";
-import PumaLogoIcon from "@/assets/icons/deal-adidas-bg.svg";
-import SonyLogoIcon from "@/assets/icons/deal-adidas-bg.svg";
-import AirbnbLogoIcon from "@/assets/icons/deal-adidas-bg.svg";
-import IkeaLogoIcon from "@/assets/icons/deal-adidas-bg.svg";
-import GucciLogoIcon from "@/assets/icons/deal-adidas-bg.svg";
-import AmazonLogoIcon from "@/assets/icons/deal-adidas-bg.svg";
+import CashbackHelpIcon from "@/assets/icons/cashback-help-icon.svg";
+import CodesPromoIcon from "@/assets/icons/codes-promo-card.svg";
+import ReferralHelpIcon from "@/assets/icons/referral-icon.svg";
+import TechIcon from "@/assets/icons/tech-icon.svg";
+import AdidaasLogoIcon from "@/assets/icons/partner-adidas.svg";
+import AsusLogoIcon from "@/assets/icons/partner-asus.svg";
+import PumaLogoIcon from "@/assets/icons/partner-puma.svg";
+import SonyLogoIcon from "@/assets/icons/partner-sony.svg";
+import AirbnbLogoIcon from "@/assets/icons/partner-airbnb.svg";
+import AmazonLogoIcon from "@/assets/icons/partner-amazon.svg";
+import GucciLogoIcon from "@/assets/icons/gucci-brand.svg";
 
 const brandLogos = [
   AdidaasLogoIcon, AsusLogoIcon, PumaLogoIcon, SonyLogoIcon,
-  AirbnbLogoIcon, IkeaLogoIcon, GucciLogoIcon, AmazonLogoIcon,
+  AirbnbLogoIcon, AmazonLogoIcon, GucciLogoIcon, AmazonLogoIcon,
 ];
 
 const helpCards = [
