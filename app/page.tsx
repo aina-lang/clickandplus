@@ -11,16 +11,18 @@ import PartnersSection from "@/components/PartnersSection";
 import ReferralSection from "@/components/ReferralSection";
 import AppSection from "@/components/AppSection";
 import Footer from "@/components/Footer";
+import LastChanceSection from "@/components/LastChanceSection";
 
 export default function Home() {
   return (
-    <main className="bg-page overflow-x-hidden">
+    <main className="bg-page overflow-x-hidden pt-[142px]">
       <Navbar />
       <HeroSection />
       <StatsBar />
       <OffersSection />
       <BigStatsBanner />
       <TopDealsSection />
+      <LastChanceSection /> 
       <ReviewsSection />
       <FeaturedSection />
       <BestDealsSection />

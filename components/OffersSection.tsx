@@ -187,7 +187,7 @@ export default function OffersSection() {
             {pages.map((page, pageIdx) => (
               <div
                 key={`page-${pageIdx}`}
-                className="min-w-full flex-shrink-0 grid gap-8"
+                className="min-w-full shrink-0 grid gap-8"
                 style={{
                   gridTemplateColumns: `repeat(${itemsPerView}, minmax(0, 1fr))`
                 }}
@@ -195,7 +195,7 @@ export default function OffersSection() {
                 {page.map((offer, i) => (
                   <div
                     key={`${offer.id}-${i}`}
-                    className="flex flex-col group"
+                    className="flex flex-col group shrink-0"
                   >
                     {/* Image Container with Overlays */}
                     <div className="relative aspect-square rounded-lg overflow-hidden bg-[#e5e5e5] mb-5 group-hover:shadow-md transition-all duration-300">
@@ -206,17 +206,6 @@ export default function OffersSection() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                         className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:blur-md"
                       />
-
-                      {/* Brand Logo Overlay */}
-                      {(offer.brandLogo || offer.brand) && (
-                        <div className="absolute bottom-4 left-4 w-14 h-14 bg-white rounded-lg flex items-center justify-center shadow-md p-2 z-20">
-                          {offer.brandLogo ? (
-                            <offer.brandLogo className="w-full h-full object-contain" />
-                          ) : (
-                            <span className="font-bold text-[12px] m-0 leading-none text-center text-dark">{offer.brand}</span>
-                          )}
-                        </div>
-                      )}
 
                       {/* Activer l'offre Button Overlay */}
                       <div className="absolute inset-0 flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

@@ -1,153 +1,127 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import GucciIcon from "@/assets/icons/brand-gucci.svg";
-import AirbnbTextIcon from "@/assets/icons/brand-airbnb-text.svg";
-import SonyIcon from "@/assets/icons/brand-sony.svg";
-import AmazonIcon from "@/assets/icons/brand-amazon.svg";
-import ArrowExtIcon from "@/assets/icons/arrow-ext.svg";
+import Image from "next/image";
+import GucciLogoIcon from "@/assets/icons/gucci-brand.svg";
+import AirbnbLogoIcon from "@/assets/icons/airbnb-brand.svg";
+import SonyLogoIcon from "@/assets/icons/sony-text.svg";
+import AmazonLogoIcon from "@/assets/icons/amazon-text.svg";
 
-type DealTab = "TOP CASHBACKS" | "TOP CODES PROMO" | "TOP PARTENAIRES";
-
-const tabs: DealTab[] = ["TOP CASHBACKS", "TOP CODES PROMO", "TOP PARTENAIRES"];
-
-const dealCards = [
+const deals = [
   {
+    image: "/images/deal-gucci.jpg",
     category: "Mode & Accessoires",
-    BrandIcon: GucciIcon,
-    price: "8",
+    categoryHighlight: true,
+    BrandLogo: GucciLogoIcon,
     desc: "Produit cosmétique GUCCI\nCollection Beauty, format luxe.",
-    bg: "#f5f5f5",
   },
   {
+    image: "/images/deal-airbnb.jpg",
     category: "Maison et Jardin",
-    BrandIcon: AirbnbTextIcon,
-    price: "15",
+    categoryHighlight: false,
+    BrandLogo: AirbnbLogoIcon,
     desc: "Bon d'achat Airbnb valable sur\ntoutes les réservations.",
-    bg: "#fff5f5",
   },
   {
+    image: "/images/deal-sony.jpg",
     category: "High-tech",
-    BrandIcon: SonyIcon,
-    price: "10",
+    categoryHighlight: false,
+    BrandLogo: SonyLogoIcon,
     desc: "Accessoire smartphone SONY\nCompatibilité universelle.",
-    bg: "#f5f5f5",
   },
   {
+    image: "/images/deal-amazon.jpg",
     category: "Toutes les catégories",
-    BrandIcon: AmazonIcon,
-    price: "5",
+    categoryHighlight: false,
+    BrandLogo: AmazonLogoIcon,
     desc: "Bon d'achat Amazon valable\nsur toutes les catégories.",
-    bg: "#fffaf0",
   },
 ];
 
 export default function BestDealsSection() {
-  const [activeTab, setActiveTab] = useState<DealTab>("TOP CASHBACKS");
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref as React.RefObject<Element>, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="bg-white py-20">
+    <section ref={ref} className="bg-[#f5f5f5] py-20">
       <div className="section-container">
+
+        {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          className="section-heading text-center mb-12"
+          transition={{ duration: 0.5 }}
+          className="section-heading text-center mb-14"
         >
           Les meilleures réductions
         </motion.h2>
 
-        {/* Deal cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {dealCards.map((card, i) => (
+        {/* Cards grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {deals.map((deal, i) => (
             <motion.div
-              key={card.category}
-              initial={{ opacity: 0, y: 25 }}
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="card-hover rounded-[27px] p-6 flex flex-col gap-4 border border-gray-100"
-              style={{ background: "#ffffff", minHeight: 420 }}
+              transition={{ delay: i * 0.1, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              className="flex flex-col"
             >
-              <div className="flex items-center justify-between">
-                <span
-                  className="text-dark/40 font-bold"
-                  style={{
-                    fontFamily: "var(--font-space-grotesk)",
-                    fontSize: "14px",
-                  }}
-                >
-                  {card.category}
-                </span>
-                <div
-                  className="bg-[#000] text-white w-10 h-10 rounded-full flex items-center justify-center font-bold"
-                  style={{ fontFamily: "var(--font-space-grotesk)" }}
-                >
-                  {card.price}€
+              {/* Image + brand block */}
+              <div className="rounded-2xl overflow-hidden bg-white">
+                {/* Product image */}
+                <div className="relative w-full aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={deal.image}
+                    alt={deal.desc}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                  {/* Category badge */}
+                  <span
+                    className={`absolute top-3 left-3 px-3 py-1.5 rounded-full text-[13px] font-semibold ${
+                      deal.categoryHighlight
+                        ? "bg-[#f5d90a] text-dark"
+                        : "bg-white text-dark"
+                    }`}
+                    style={{ fontFamily: "var(--font-space-grotesk)" }}
+                  >
+                    {deal.category}
+                  </span>
                 </div>
-              </div>
 
-              {/* Brand logo */}
-              <div className="flex-1 flex items-center justify-center py-6">
-                <card.BrandIcon style={{ width: 140, height: 60, maxWidth: "100%" }} />
+                {/* Brand logo */}
+                <div className="flex items-center justify-center px-6 py-5 bg-white">
+                  <deal.BrandLogo className="h-8 w-auto object-contain" />
+                </div>
               </div>
 
               {/* Description */}
               <p
-                className="text-dark font-medium text-center"
+                className="text-dark text-center whitespace-pre-line mt-4 mb-5 leading-relaxed"
                 style={{
-                  fontFamily: "var(--font-space-grotesk)",
-                  fontSize: "18px",
-                  lineHeight: "24px",
+                  fontFamily: "var(--font-poppins)",
+                  fontWeight: 400,
+                  fontSize: "14px",
                 }}
               >
-                {card.desc}
+                {deal.desc}
               </p>
 
               {/* CTA button */}
-              <div className="flex justify-center">
-                <button
-                  className="bg-dark text-white rounded-full px-8 py-3 font-bold text-sm hover:opacity-90 transition-opacity"
-                  style={{ fontFamily: "var(--font-space-grotesk)" }}
-                >
-                  Voir l'offre
-                </button>
-              </div>
+              <button
+                className="flex items-center justify-center gap-2 bg-dark text-white font-bold px-6 py-3 rounded-full hover:opacity-90 transition-opacity cursor-pointer text-[14px] w-full"
+                style={{ fontFamily: "var(--font-space-grotesk)" }}
+              >
+                Profiter de l&apos;offre
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </button>
             </motion.div>
           ))}
         </div>
-
-        {/* Tab navigation */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.4 }}
-          className="flex items-center justify-center gap-12 rounded-[7px] py-4 px-8 flex-wrap"
-          style={{ background: "#fbfbfb" }}
-        >
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className="relative pb-2 transition-colors font-semibold"
-              style={{
-                fontFamily: "var(--font-space-grotesk)",
-                fontSize: "clamp(14px, 1.5vw, 22px)",
-                letterSpacing: "-1.35px",
-                color: activeTab === tab ? "#0b0c0c" : "#656565",
-              }}
-            >
-              {tab}
-              {activeTab === tab && (
-                <motion.div
-                  layoutId="deal-tab"
-                  className="absolute bottom-0 left-0 right-0 h-1 rounded-full bg-[#ffd03e]"
-                />
-              )}
-            </button>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

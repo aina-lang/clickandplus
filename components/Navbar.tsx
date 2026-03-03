@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import LogoIcon from "@/assets/icons/logo.svg";
 import SettingsIcon from "@/assets/icons/settings.svg";
 import SearchGroupIcon from "@/assets/icons/search-group.svg";
@@ -16,9 +17,20 @@ export default function Navbar() {
   const [accountOpen, setAccountOpen] = useState(false);
   const [offresOpen, setOffresOpen] = useState(false);
 
+  // Sticky scroll state
+  const [scrolled, setScrolled] = useState(false);
+  const lastScrollY = useRef(0);
+
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    // Add shadow/blur after 10px scroll
+    setScrolled(latest > 10);
+    lastScrollY.current = latest;
+  });
+
   const accountRef = useRef<HTMLDivElement>(null);
   const offresRef = useRef<HTMLDivElement>(null);
-  const mobileRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -34,15 +46,23 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="bg-white sticky top-0 z-50">
+    <motion.header
+      className="bg-white fixed top-0 left-0 w-full z-50 transition-all duration-300"
+      style={{
+        boxShadow: scrolled
+          ? "0 4px 24px 0 rgba(0,0,0,0.08)"
+          : "none",
+        backdropFilter: scrolled ? "blur(8px)" : "none",
+      }}
+    >
       {/* Top Row */}
-      <div className="px-10  flex items-center justify-between  h-[90px] relative">
+      <div className="px-10 flex items-center justify-between relative h-[90px]">
         {/* Logo + tagline */}
         <div className="flex items-center gap-5">
           <LogoIcon className="w-[100px] h-[62px]" />
           <span
             className="hidden xl:block text-[#000] text-[14px]"
-            style={{ fontFamily: "var(--font-poppins)", fontWeight: 400, }}
+            style={{ fontFamily: "var(--font-poppins)", fontWeight: 400 }}
           >
             Plus de 5 millions de deals disponibles dans plusieurs pays.
           </span>
@@ -53,7 +73,7 @@ export default function Navbar() {
           className="hidden md:flex items-center gap-3 px-12 h-[40px] rounded-[23px] border border-[#f0f0f0] relative"
           style={{ background: "#fbfbfb", width: 210 }}
         >
-          <SettingsIcon className="w-[17px] h-[17px]  absolute left-2 " />
+          <SettingsIcon className="w-[17px] h-[17px] absolute left-2" />
           <div className="h-4 w-px bg-gray-400 absolute left-8" />
           <input
             type="text"
@@ -62,7 +82,10 @@ export default function Navbar() {
             style={{ fontFamily: "var(--font-poppins)" }}
           />
           <div className="w-8 h-8 rounded-full bg-[#FFF6D8] flex items-center justify-center shrink-0 absolute right-2">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
           </div>
         </div>
 
@@ -87,7 +110,11 @@ export default function Navbar() {
             </div>
 
             {accountOpen && (
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: -8, scale: 0.97 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -8, scale: 0.97 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 className="absolute top-full mt-2 left-0 w-48 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden z-[60]"
                 style={{ fontFamily: "var(--font-space-grotesk)" }}
               >
@@ -97,7 +124,7 @@ export default function Navbar() {
                 <a href="#" onClick={() => { setAccountOpen(false); setMobileOpen(false); }} className="block px-4 py-3 hover:bg-gray-50 transition-colors font-bold text-sm">
                   Se connecter
                 </a>
-              </div>
+              </motion.div>
             )}
           </div>
 
@@ -136,14 +163,9 @@ export default function Navbar() {
       </div>
 
       {/* Bottom Row */}
-      <div className="bg-white w-full">
-        <div className="section-container flex items-center h-[52px] gap-8 justify-around ">
-          {/* Categories */}
-
-
-          {/* Nav links */}
-          <nav className="hidden lg:flex items-center justify-between  ">
-
+      <div className="bg-white w-full ">
+        <div className="section-container flex items-center h-[52px] gap-8 justify-around">
+          <nav className="hidden lg:flex items-center justify-between">
             <div className="flex items-center gap-16">
               <div
                 className="flex items-center gap-2 cursor-pointer"
@@ -155,12 +177,13 @@ export default function Navbar() {
               >
                 <GridIcon className="w-[18px] h-[18px] text-yellow" />
                 <span
-                  className={`text-dark font-bold text-[15px] transition-opacity ${activeNavItem === "Toutes les catégories" ? "opacity-100" : "opacity-100"}`}
+                  className="text-dark font-bold text-[15px]"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   Toutes les catégories
                 </span>
               </div>
+
               {[
                 { label: "Nos offres", hasChevron: true },
                 { label: "Shop", hasChevron: false },
@@ -194,7 +217,11 @@ export default function Navbar() {
                   </a>
 
                   {item.hasChevron && offresOpen && (
-                    <div
+                    <motion.div
+                      initial={{ opacity: 0, y: -8, scale: 0.97 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -8, scale: 0.97 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
                       className="absolute top-full mt-2 left-0 w-48 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden z-[60]"
                       style={{ fontFamily: "var(--font-space-grotesk)" }}
                     >
@@ -220,7 +247,7 @@ export default function Navbar() {
                       >
                         Deals du jour
                       </a>
-                    </div>
+                    </motion.div>
                   )}
                 </div>
               ))}
@@ -231,47 +258,45 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
-          {["Nos offres", "Shop", "Services +", "Club Membres", "Help Center", "Mon espaces"].map(
-            (item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-dark text-base"
-                onClick={() => {
-                  setActiveNavItem(item);
-                  setAccountOpen(false);
-                  setMobileOpen(false);
-                }}
-              >
-                {item}
-              </a>
-            )
-          )}
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="lg:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4 overflow-hidden"
+        >
+          {["Nos offres", "Shop", "Services +", "Club Membres", "Help Center", "Mon espaces"].map((item) => (
+            <a
+              key={item}
+              href="#"
+              className="text-dark text-base"
+              onClick={() => {
+                setActiveNavItem(item);
+                setAccountOpen(false);
+                setMobileOpen(false);
+              }}
+            >
+              {item}
+            </a>
+          ))}
           <div className="flex gap-3">
             <a
               href="#"
               className="flex-1 text-center py-2 bg-[#0b0c0c] text-white rounded-lg text-sm"
-              onClick={() => {
-                setAccountOpen(false);
-                setMobileOpen(false);
-              }}
+              onClick={() => { setAccountOpen(false); setMobileOpen(false); }}
             >
               S&apos;inscrire
             </a>
             <a
               href="#"
               className="flex-1 text-center py-2 bg-[#0b0c0c] text-white rounded-lg text-sm"
-              onClick={() => {
-                setAccountOpen(false);
-                setMobileOpen(false);
-              }}
+              onClick={() => { setAccountOpen(false); setMobileOpen(false); }}
             >
               Se connecter
             </a>
           </div>
-        </div>
+        </motion.div>
       )}
-    </header>
+    </motion.header>
   );
 }
