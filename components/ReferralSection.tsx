@@ -11,24 +11,17 @@ export default function ReferralSection() {
 
   return (
     <section ref={ref} className="w-full" style={{ background: "#0d0d0d", padding: "90px 0" }}>
-      <div className="section-container">
-        <div className="flex items-center justify-between gap-12 flex-wrap">
+      <div className="section-container -mx-10">
+        <div className="flex items-center justify-between gap-9 flex-wrap relative">
           {/* Left content */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.65 }}
-            className="flex-1 min-w-[300px] max-w-[900px]"
+            className="flex-1"
           >
             <h2
-              style={{
-                fontFamily: "var(--font-manrope)",
-                fontWeight: 800,
-                fontSize: "clamp(42px, 6vw, 90px)",
-                letterSpacing: "-4.68px",
-                lineHeight: "100px",
-                color: "#ffde77",
-              }}
+             className="text-white text-6xl font-bold text-nowrap"
             >
               Partagez et gagnez +
             </h2>
@@ -51,11 +44,11 @@ export default function ReferralSection() {
             {/* CTAs */}
             <div className="flex items-center gap-8 mt-10 flex-wrap">
               <button
-                className="flex items-center gap-3 bg-[#0b0c0c] text-white rounded-[43px] px-8 py-5 font-semibold hover:opacity-85 transition-opacity border border-white/20"
+                className="flex items-center gap-3 text-[#0b0c0c] bg-white rounded-[43px] px-8 py-3 cursor-pointer font-semibold hover:opacity-85 transition-opacity border border-white/20"
                 style={{ fontFamily: "var(--font-poppins)", fontSize: 22 }}
               >
                 Partager mon lien
-                <LinkIcon className="w-8 h-8" style={{ color: "#fff" }} />
+                <LinkIcon className="w-8 h-8" style={{ color: "#0b0c0c" }} />
               </button>
               <a
                 href="#"
@@ -72,10 +65,11 @@ export default function ReferralSection() {
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.65, delay: 0.2 }}
-            className="flex-1 flex justify-end min-w-[300px] max-w-[600px]"
+            className="flex-1 flex justify-end bg-red-500 w-full h-full"
           >
             <FriendsIllustrationIcon
-              style={{ width: "100%", maxWidth: 560, height: "auto" }}
+              style={{ width: "100%", maxWidth: 560, height: "auto", }}
+              className="w-full h-full object-contain absolute top-4 -right-10 "
             />
           </motion.div>
         </div>

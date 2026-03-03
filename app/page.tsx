@@ -26,8 +26,9 @@ export default function Home() {
       <ReviewsSection />
       <FeaturedSection />
       <BestDealsSection />
-      <PartnersSection />
+      
       <ReferralSection />
+      <PartnersSection />
       <AppSection />
       <Footer />
     </main>

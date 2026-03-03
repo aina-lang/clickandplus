@@ -17,11 +17,11 @@ const alphabet = ["Populaire", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
 
 const partners = [
   { FrameIcon: PartnerAdidasIcon, name: "Adidas", cashback: "Jusqu'à 7,5 % de cashback", img: null },
-  { FrameIcon: null, name: "Ebay", cashback: "Jusqu'à 9 % de cashback", img: "/images/ebay.png" },
-  { FrameIcon: null, name: "Chanel", cashback: "Jusqu'à 7 % de cashback", img: null, LogoIcon: ChanelLogoIcon },
+  { FrameIcon: PartnerPumaIcon, name: "Ebay", cashback: "Jusqu'à 9 % de cashback", img: "/images/ebay.png" },
+  { FrameIcon: PartnerPumaIcon, name: "Chanel", cashback: "Jusqu'à 7 % de cashback", img: null, LogoIcon: ChanelLogoIcon },
   { FrameIcon: PartnerAirbnbIcon, name: "Airbnb", cashback: "Profitez de 10 % de cashback", img: null },
   { FrameIcon: PartnerAmazonIcon, name: "Amazon", cashback: "Gagnez jusqu'à 7,5 %", img: null },
-  { FrameIcon: null, name: "ZARA", cashback: "Cashback jusqu'à 7,5 %", img: "/images/zara.png" },
+  { FrameIcon: PartnerPumaIcon, name: "ZARA", cashback: "Cashback jusqu'à 7,5 %", img: "/images/zara.png" },
   { FrameIcon: PartnerPumaIcon, name: "Puma", cashback: "Jusqu'à 15 % de cashback", img: null },
   { FrameIcon: PartnerSonyIcon, name: "Sony", cashback: "Jusqu'à 5,5 % de cashback", img: null },
   { FrameIcon: PartnerNikeIcon, name: "Nike", cashback: "Cashback jusqu'à 10,5 %", img: null },
@@ -39,27 +39,30 @@ export default function PartnersSection() {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          className="section-heading text-center mb-12"
+          className="section-heading text-center mb-12 text-4xl"
         >
           Obtenez les meilleurs deals chez nos partenaires préférés
         </motion.h2>
 
         {/* Alphabet nav */}
-        <div className="flex items-center gap-3 flex-wrap mb-10 overflow-x-auto scrollbar-hidden pb-2">
+        <div className="flex items-center gap-3 flex-wrap mb-10  scrollbar-hidden pb-2 justify-between">
           {alphabet.map((letter) => (
             <button
               key={letter}
               onClick={() => setActiveAlpha(letter)}
-              className="relative flex items-center gap-1 font-semibold transition-colors shrink-0"
+              className="relative flex items-center cursor-pointer gap-1 font-semibold transition-colors shrink-0 p-1 "
               style={{
                 fontFamily: "var(--font-space-grotesk)",
                 fontSize: "clamp(14px, 1.3vw, 22px)",
                 letterSpacing: "-1.30px",
                 color: activeAlpha === letter ? "#0b0c0c" : "#0b0c0c",
+                backgroundColor: letter === "Populaire"? "#FFF6D8" : "transparent",
+                borderRadius: "5px",
+              
               }}
             >
               {letter === "Populaire" && (
-                <span className="w-3.5 h-3.5 rounded-full bg-orange-500 inline-block" />
+                <span className="w-3.5 h-3.5 rounded-full bg-orange-500 inline-block absolute -top-1 -right-2" />
               )}
               {letter}
               {activeAlpha === letter && (
@@ -80,16 +83,16 @@ export default function PartnersSection() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: i * 0.05, duration: 0.4 }}
-              className="group flex flex-col items-center gap-3 cursor-pointer p-4 rounded-xl border border-transparent hover:border-gray-100 hover:bg-gray-50/50 transition-all"
+              className="group flex flex-col items-center  cursor-pointer  rounded-xl border border-transparent "
             >
               {/* Partner frame / logo */}
-              <div className="w-full aspect-square flex items-center justify-center rounded-xl overflow-hidden bg-white shadow-sm group-hover:shadow-md transition-shadow">
+              <div className="w-full aspect-square flex items-center justify-center rounded-xl overflow-hidden ">
                 {partner.FrameIcon ? (
-                  <partner.FrameIcon style={{ width: "80%", height: "80%" }} />
+                  <partner.FrameIcon style={{ width: "100%", height: "100%" }} />
                 ) : partner.LogoIcon ? (
-                  <partner.LogoIcon style={{ width: "60%", height: "auto" }} />
+                  <partner.LogoIcon style={{ width: "100%", height: "100%" }} />
                 ) : partner.img ? (
-                  <div className="relative w-3/4 h-3/4">
+                  <div className="relative w-4/4 h-4/4">
                     <Image
                       src={partner.img}
                       alt={partner.name}
@@ -99,9 +102,9 @@ export default function PartnersSection() {
                   </div>
                 ) : null}
               </div>
-              <div className="text-center">
+              <div className="text-left  w-full  -mt-10">
                 <p
-                  className="text-dark/40 font-medium text-xs mb-1 uppercase tracking-wider"
+                  className="text-dark/40 font-medium text-xs mb-1 uppercase tracking-wider text-left"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   {partner.name}
@@ -120,7 +123,7 @@ export default function PartnersSection() {
         {/* See all */}
         <div className="flex justify-center mt-12">
           <button
-            className="text-white bg-dark hover:opacity-90 transition-opacity px-10 py-4 rounded-full font-bold shadow-lg"
+            className="text-white bg-dark hover:opacity-90 transition-opacity px-10 py-3 rounded-full font-bold shadow-lg"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
             Découvrir tous nos partenaires
