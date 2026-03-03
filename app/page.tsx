@@ -12,6 +12,8 @@ import ReferralSection from "@/components/ReferralSection";
 import AppSection from "@/components/AppSection";
 import Footer from "@/components/Footer";
 import LastChanceSection from "@/components/LastChanceSection";
+import TopCashbacksSection from "@/components/TopCashbacksSection";
+import HelpSection from "@/components/HelpSection";
 
 export default function Home() {
   return (
@@ -26,9 +28,13 @@ export default function Home() {
       <ReviewsSection />
       <FeaturedSection />
       <BestDealsSection />
-      
+      <TopCashbacksSection />
       <ReferralSection />
       <PartnersSection />
+      
+      
+      
+      <HelpSection />
       <AppSection />
       <Footer />
     </main>

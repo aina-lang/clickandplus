@@ -2,155 +2,144 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import ChromeIcon from "@/assets/icons/chrome.svg";
 import ExtensionFeaturesIcon from "@/assets/icons/extension-features.svg";
-import ChromeExtScreenshotIcon from "@/assets/icons/chrome-ext-screenshot.svg";
-import PhoneTopIcon from "@/assets/icons/phone-top.svg";
-import PhoneBottomIcon from "@/assets/icons/phone-bottom.svg";
+import PhoneMockupIcon from "@/assets/icons/mcdonalds.svg";
 import GooglePlayIcon from "@/assets/icons/google-play.svg";
 import AppleIcon from "@/assets/icons/apple.svg";
-import ExtensionIcon from "@/assets/icons/extension.svg";
+import Image from "next/image";
 
 export default function AppSection() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref as React.RefObject<Element>, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="bg-white py-20">
+    <section ref={ref} className="bg-[#f5f5f5] py-20">
       <div className="section-container">
+
+        {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          className="section-heading text-center mb-12"
+          className="section-heading text-center mb-16 text-4xl"
         >
           Gagner plus, dépenser moins
         </motion.h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left: Extension card */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+          {/* ── Left: Extension ── */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="rounded-[36px] p-8 flex flex-col gap-6"
-            style={{ background: "rgba(248,248,248,0.5)", border: "1px solid #eee" }}
+            className="flex flex-col gap-10"
           >
-            {/* Title */}
             <h3
-              className="text-[#131313] font-semibold leading-tight"
+              className="text-[#131313] font-bold text-center leading-tight"
               style={{
                 fontFamily: "var(--font-space-grotesk)",
-                fontSize: "clamp(28px, 2.8vw, 46px)",
-                letterSpacing: "-2.39px",
-                lineHeight: "48px",
+                fontSize: "clamp(22px, 2.4vw, 36px)",
+                letterSpacing: "-1.2px",
               }}
             >
-              Installez l&apos;extension Clickandplus et économisez en 1 clic.
+              Installez l&apos;extension Clickandplus et<br />économisez en 1 clic.
             </h3>
 
-            {/* Extension preview box */}
-            <div
-              className="rounded-[13px] p-4 flex items-center gap-4 border-[3px] border-[#e2e2e2]"
-              style={{ background: "#fbfbfb" }}
-            >
-              <ExtensionFeaturesIcon style={{ width: 260, height: 120, flexShrink: 0 }} />
-              <div className="flex flex-col gap-2">
-                <ChromeExtScreenshotIcon style={{ width: 100, height: 70 }} />
-                <ExtensionIcon style={{ width: 30, height: 18 }} />
+            {/* Browser mockup + browser icons side by side */}
+            <div className="flex items-center justify-center gap-8">
+              {/* Extension preview */}
+              <Image src={"/images/ordinateur.png"} alt="extension" width={220} height={220} />
+
+              {/* Browser icons stacked */}
+              <div className="flex flex-col items-start gap-3 relative">
+                <Image src={"/images/chrome.png"} className="" alt="chrome" width={64} height={64} />
+                <Image src={"/images/firefox.png"} className="absolute top-0 left-10 " alt="firefox" width={64} height={64} />
+                 <div className="flex justify-center">
+              <button
+                className="bg-dark text-white font-bold px-10 py-3 rounded-full hover:opacity-90 transition-opacity cursor-pointer text-lg"
+                style={{ fontFamily: "var(--font-space-grotesk)", letterSpacing: "-0.5px" }}
+              >
+                Ajouter a chrome
+              </button>
+            </div>
               </div>
             </div>
 
-            {/* Chrome button */}
-            <button
-              className="flex items-center gap-3 self-start bg-[#0b0c0c] text-white rounded-[43px] px-6 py-4 font-semibold hover:opacity-85 transition-opacity"
-              style={{ fontFamily: "var(--font-space-grotesk)", fontSize: 22, letterSpacing: "-1.40px" }}
-            >
-              <ChromeIcon style={{ width: 28, height: 28 }} />
-              Ajouter a chrome
-            </button>
+            {/* CTA */}
+           
           </motion.div>
 
-          {/* Right: App card */}
+          {/* ── Right: App ── */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="rounded-[36px] p-8 flex flex-col gap-6"
-            style={{ background: "rgba(248,248,248,0.5)", border: "1px solid #eee" }}
+            className="flex flex-col gap-10"
           >
-            {/* Title */}
             <h3
-              className="text-[#131313] font-semibold leading-tight"
+              className="text-[#131313] font-bold text-center leading-tight"
               style={{
                 fontFamily: "var(--font-space-grotesk)",
-                fontSize: "clamp(28px, 2.8vw, 46px)",
-                letterSpacing: "-2.39px",
-                lineHeight: "48px",
+                fontSize: "clamp(22px, 2.4vw, 36px)",
+                letterSpacing: "-1.2px",
               }}
             >
-              Suivez vos cashback et vos offres depuis l&apos;app Clickandplus.
+              Suivez vos cashback et vos offres<br />depuis l&apos;app Clickandplus.
             </h3>
 
-            {/* Phone mockup */}
-            <div
-              className="rounded-[18px] p-4 flex flex-col items-center gap-3 border-[4px] border-[#e2e2e2] self-center"
-              style={{ background: "#fbfbfb", width: 127, minHeight: 222 }}
-            >
-              <PhoneTopIcon style={{ width: 90, height: 60 }} />
-              <div className="w-full flex flex-col gap-1.5">
-                {[...Array(4)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="rounded-[5px]"
-                    style={{ height: 12, background: "#e2e2e2", width: i % 2 === 0 ? "100%" : "70%" }}
-                  />
-                ))}
-              </div>
-              <PhoneBottomIcon style={{ width: 90, height: 50 }} />
-            </div>
+            {/* Phone mockup + store buttons side by side */}
+            <div className="flex items-center justify-center gap-8">
+              {/* Phone outline mockup */}
+           <Image src={"/images/phone.png"} alt="phone" width={100} height={100} />
+              {/* Store buttons stacked */}
+              <div className="flex flex-col gap-3">
+                {/* Google Play */}
+                <button
+                  className="flex items-center gap-3 bg-dark text-white rounded-xl px-5 py-3 hover:opacity-90 transition-opacity cursor-pointer"
+                  style={{ minWidth: 200 }}
+                >
+                  <GooglePlayIcon className="w-8 h-8 flex-shrink-0" />
+                  <div className="flex flex-col text-left leading-tight">
+                    <span
+                      className="text-white/70 text-[11px]"
+                      style={{ fontFamily: "var(--font-space-grotesk)" }}
+                    >
+                      Disponible sur
+                    </span>
+                    <span
+                      className="text-white font-bold text-[17px]"
+                      style={{ fontFamily: "var(--font-space-grotesk)", letterSpacing: "-0.5px" }}
+                    >
+                      Google Play
+                    </span>
+                  </div>
+                </button>
 
-            {/* Store buttons */}
-            <div className="flex gap-4 flex-wrap">
-              <button
-                className="flex items-center gap-3 bg-[#0b0c0c] text-white rounded-[7px] px-4 py-3 hover:opacity-85 transition-opacity border border-[#f1f1f1]"
-              >
-                <GooglePlayIcon style={{ width: 42, height: 50 }} />
-                <div className="flex flex-col text-left">
-                  <span
-                    className="text-white text-xs"
-                    style={{ fontFamily: "var(--font-space-grotesk)", fontWeight: 400, lineHeight: "16px", letterSpacing: "-1.04px" }}
-                  >
-                    Disponible sur
-                  </span>
-                  <span
-                    className="text-white font-semibold"
-                    style={{ fontFamily: "var(--font-space-grotesk)", fontSize: 20, letterSpacing: "-1.77px" }}
-                  >
-                    Google Play
-                  </span>
-                </div>
-              </button>
-              <button
-                className="flex items-center gap-3 bg-[#0b0c0c] text-white rounded-[7px] px-4 py-3 hover:opacity-85 transition-opacity border border-[#f1f1f1]"
-              >
-                <AppleIcon style={{ width: 38, height: 50 }} />
-                <div className="flex flex-col text-left">
-                  <span
-                    className="text-white text-xs"
-                    style={{ fontFamily: "var(--font-space-grotesk)", fontWeight: 400, lineHeight: "16px", letterSpacing: "-1.04px" }}
-                  >
-                    Disponible sur
-                  </span>
-                  <span
-                    className="text-white font-semibold"
-                    style={{ fontFamily: "var(--font-space-grotesk)", fontSize: 20, letterSpacing: "-1.77px" }}
-                  >
-                    App Store
-                  </span>
-                </div>
-              </button>
+                {/* App Store */}
+                <button
+                  className="flex items-center gap-3 bg-dark text-white rounded-xl px-5 py-3 hover:opacity-90 transition-opacity cursor-pointer"
+                  style={{ minWidth: 200 }}
+                >
+                  <AppleIcon className="w-8 h-8 flex-shrink-0" />
+                  <div className="flex flex-col text-left leading-tight">
+                    <span
+                      className="text-white/70 text-[11px]"
+                      style={{ fontFamily: "var(--font-space-grotesk)" }}
+                    >
+                      Disponible sur
+                    </span>
+                    <span
+                      className="text-white font-bold text-[17px]"
+                      style={{ fontFamily: "var(--font-space-grotesk)", letterSpacing: "-0.5px" }}
+                    >
+                      App Store
+                    </span>
+                  </div>
+                </button>
+              </div>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
