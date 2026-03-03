@@ -77,7 +77,7 @@ export default function LastChanceSection() {
                 {/* Top-right label pill */}
                 <span
                   className={`absolute top-4 right-4 ${deal.topLabelBg} ${deal.topLabelColor} font-semibold text-sm px-4 py-1.5 rounded-full shadow-sm`}
-                  style={{ fontFamily: "var(--font-space-grotesk)" }}
+                  style={{ fontFamily: "var(--font-alan)" }}
                 >
                   {deal.topLabel}
                 </span>
@@ -92,7 +92,7 @@ export default function LastChanceSection() {
                   </div>
                   <span
                     className="text-[#0d0d0d] font-bold text-sm tracking-wide"
-                    style={{ fontFamily: "var(--font-space-grotesk)", letterSpacing: "-0.3px" }}
+                    style={{ fontFamily: "var(--font-alan)", letterSpacing: "-0.3px" }}
                   >
                     {deal.category}
                   </span>
@@ -102,7 +102,7 @@ export default function LastChanceSection() {
                 <h3
                   className="text-[#0d0d0d] font-bold mb-2 leading-tight"
                   style={{
-                    fontFamily: "var(--font-space-grotesk)",
+                    fontFamily: "var(--font-alan)",
                     fontSize: "clamp(18px, 1.8vw, 24px)",
                     letterSpacing: "-0.8px",
                   }}
@@ -114,7 +114,7 @@ export default function LastChanceSection() {
                 <p
                   className="text-[#0d0d0d] whitespace-pre-line"
                   style={{
-                    fontFamily: "var(--font-poppins)",
+                    fontFamily: "var(--font-alan)",
                     fontWeight: 300,
                     fontSize: "clamp(13px, 1.2vw, 16px)",
                     lineHeight: "1.6",

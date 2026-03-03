@@ -58,7 +58,7 @@ function BrandCard({ brand, index, isInView }: { brand: BrandItem; index: number
       <span
         className="self-end text-[#cbcbcb] line-through"
         style={{
-          fontFamily: "var(--font-space-grotesk)",
+          fontFamily: "var(--font-alan)",
           fontWeight: 400,
           fontSize: 13,
           letterSpacing: "-0.83px",
@@ -90,7 +90,7 @@ function BrandCard({ brand, index, isInView }: { brand: BrandItem; index: number
       {/* Label */}
       <span
         className="text-[#131313] font-semibold text-sm"
-        style={{ fontFamily: "var(--font-space-grotesk)", fontSize: 14, letterSpacing: "-0.94px" }}
+        style={{ fontFamily: "var(--font-alan)", fontSize: 14, letterSpacing: "-0.94px" }}
       >
         Cashbacks
       </span>
@@ -103,7 +103,7 @@ function BrandCard({ brand, index, isInView }: { brand: BrandItem; index: number
         <span
           className="font-semibold"
           style={{
-            fontFamily: "var(--font-space-grotesk)",
+            fontFamily: "var(--font-alan)",
             fontSize: 17,
             letterSpacing: "-1.09px",
             color: "#0d0d0d",
@@ -141,7 +141,7 @@ export default function CashbackSection() {
           <a
             href="#"
             className="text-[#0d0d0d] font-medium hover:underline"
-            style={{ fontFamily: "var(--font-poppins)", fontSize: 20, letterSpacing: "-0.34px" }}
+            style={{ fontFamily: "var(--font-alan)", fontSize: 20, letterSpacing: "-0.34px" }}
           >
             Voir toutes les offres
           </a>

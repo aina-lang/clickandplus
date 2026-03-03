@@ -36,7 +36,7 @@ export default function Footer() {
             <h3
               className="text-white font-bold leading-tight mb-3"
               style={{
-                fontFamily: "var(--font-space-grotesk)",
+                fontFamily: "var(--font-alan)",
                 fontSize: "clamp(28px, 3vw, 52px)",
                 letterSpacing: "-2px",
                 lineHeight: "1.1",
@@ -46,7 +46,7 @@ export default function Footer() {
             </h3>
             <p
               className="text-white/60"
-              style={{ fontFamily: "var(--font-poppins)", fontWeight: 300, fontSize: 18 }}
+              style={{ fontFamily: "var(--font-alan)", fontWeight: 300, fontSize: 18 }}
             >
               Inscrivez-vous pour ne rien manquer
             </p>
@@ -61,7 +61,7 @@ export default function Footer() {
                 type="text"
                 placeholder="Prénom"
                 className="bg-transparent text-white placeholder-white outline-none flex-1 text-[17px]"
-                style={{ fontFamily: "var(--font-space-grotesk)" }}
+                style={{ fontFamily: "var(--font-alan)" }}
               />
             </div>
 
@@ -72,7 +72,7 @@ export default function Footer() {
                 type="email"
                 placeholder="Email"
                 className="bg-transparent text-white placeholder-white outline-none flex-1 text-[17px]"
-                style={{ fontFamily: "var(--font-space-grotesk)" }}
+                style={{ fontFamily: "var(--font-alan)" }}
               />
             </div>
 
@@ -81,7 +81,7 @@ export default function Footer() {
               className="w-full py-4 rounded-full font-bold text-dark hover:opacity-90 transition-opacity cursor-pointer"
               style={{
                 background: "#ffde77",
-                fontFamily: "var(--font-space-grotesk)",
+                fontFamily: "var(--font-alan)",
                 fontSize: "clamp(14px, 1.3vw, 18px)",
                 letterSpacing: "0.5px",
               }}
@@ -106,7 +106,7 @@ export default function Footer() {
               <h4
                 className="text-white font-bold mb-5"
                 style={{
-                  fontFamily: "var(--font-space-grotesk)",
+                  fontFamily: "var(--font-alan)",
                   fontSize: "clamp(15px, 1.3vw, 20px)",
                 }}
               >
@@ -119,7 +119,7 @@ export default function Footer() {
                       href="#"
                       className="text-white/55 hover:text-white transition-colors"
                       style={{
-                        fontFamily: "var(--font-poppins)",
+                        fontFamily: "var(--font-alan)",
                         fontWeight: 400,
                         fontSize: "clamp(13px, 1vw, 17px)",
                       }}
@@ -140,7 +140,7 @@ export default function Footer() {
         <div className="flex flex-col items-center gap-4">
           <span
             className="text-white/50"
-            style={{ fontFamily: "var(--font-poppins)", fontSize: 15 }}
+            style={{ fontFamily: "var(--font-alan)", fontSize: 15 }}
           >
             Suivez-nous sur
           </span>

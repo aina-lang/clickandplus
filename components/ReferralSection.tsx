@@ -21,7 +21,7 @@ export default function ReferralSection() {
             className="flex-1"
           >
             <h2
-             className="text-white text-6xl font-bold text-nowrap"
+              className="text-white text-6xl font-bold text-nowrap"
             >
               Partagez et gagnez +
             </h2>
@@ -29,7 +29,7 @@ export default function ReferralSection() {
             <p
               className="mt-6 text-white"
               style={{
-                fontFamily: "var(--font-poppins)",
+                fontFamily: "var(--font-alan)",
                 fontWeight: 300,
                 fontSize: "clamp(16px, 1.8vw, 26px)",
                 letterSpacing: "-0.41px",
@@ -45,7 +45,7 @@ export default function ReferralSection() {
             <div className="flex items-center gap-8 mt-10 flex-wrap">
               <button
                 className="flex items-center gap-3 text-[#0b0c0c] bg-white rounded-[43px] px-8 py-3 cursor-pointer font-semibold hover:opacity-85 transition-opacity border border-white/20"
-                style={{ fontFamily: "var(--font-poppins)", fontSize: 22 }}
+                style={{ fontFamily: "var(--font-alan)", fontSize: 22 }}
               >
                 Partager mon lien
                 <LinkIcon className="w-8 h-8" style={{ color: "#0b0c0c" }} />
@@ -53,7 +53,7 @@ export default function ReferralSection() {
               <a
                 href="#"
                 className="text-white font-semibold text-xl hover:opacity-75 transition-opacity"
-                style={{ fontFamily: "var(--font-poppins)", fontSize: 22 }}
+                style={{ fontFamily: "var(--font-alan)", fontSize: 22 }}
               >
                 En savoir plus
               </a>

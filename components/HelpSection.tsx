@@ -79,7 +79,7 @@ export default function HelpSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             className="text-[#0b0c0c] font-bold text-4xl"
-            style={{ fontFamily: "var(--font-space-grotesk)",  letterSpacing: "-1.5px" }}
+            style={{ fontFamily: "var(--font-alan)", letterSpacing: "-1.5px" }}
           >
             Centre d&apos;aide
           </motion.h2>
@@ -132,9 +132,8 @@ export default function HelpSection() {
               >
                 {/* Icon */}
                 <div
-                  className={`w-12 h-12 flex items-center justify-center rounded-xl transition-all duration-300 ${
-                    isActive ? "bg-white shadow-sm" : ""
-                  }`}
+                  className={`w-12 h-12 flex items-center justify-center rounded-xl transition-all duration-300 ${isActive ? "bg-white shadow-sm" : ""
+                    }`}
                 >
                   <card.Icon className="w-8 h-8" />
                 </div>
@@ -157,9 +156,8 @@ export default function HelpSection() {
 
                 {/* CTA */}
                 <button
-                  className={`flex items-center gap-3 self-start rounded-full px-5 py-3 font-medium text-sm transition-all duration-300 ${
-                    isActive ? "bg-white text-dark hover:bg-gray-50" : "bg-dark text-white hover:opacity-85"
-                  }`}
+                  className={`flex items-center gap-3 self-start rounded-full px-5 py-3 font-medium text-sm transition-all duration-300 ${isActive ? "bg-white text-dark hover:bg-gray-50" : "bg-dark text-white hover:opacity-85"
+                    }`}
                   style={{ fontFamily: "var(--font-poppins)" }}
                 >
                   En savoir plus

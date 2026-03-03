@@ -168,7 +168,7 @@ export default function TopDealsSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-white font-bold text-4xl md:text-5xl mb-4"
-          style={{ fontFamily: "var(--font-space-grotesk)" }}
+          style={{ fontFamily: "var(--font-alan)" }}
         >
           Top deals du moment
         </motion.h2>
@@ -177,7 +177,7 @@ export default function TopDealsSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-white/50 text-base"
-          style={{ fontFamily: "var(--font-poppins)" }}
+          style={{ fontFamily: "var(--font-alan)" }}
         >
           Trouvez les meilleurs bons plans du moment classés par univers
         </motion.p>
@@ -221,7 +221,7 @@ export default function TopDealsSection() {
                 <div className="absolute top-4 left-4 z-10">
                   <span
                     className="bg-white text-dark text-[12px] font-semibold px-3 py-1.5 rounded-full"
-                    style={{ fontFamily: "var(--font-space-grotesk)" }}
+                    style={{ fontFamily: "var(--font-alan)" }}
                   >
                     {deal.category}
                   </span>
@@ -246,7 +246,7 @@ export default function TopDealsSection() {
 
                   <h3
                     className={`font-bold text-3xl leading-tight mt-3 ${(deal as any).highlight ? "text-dark" : "text-white"}`}
-                    style={{ fontFamily: "var(--font-space-grotesk)" }}
+                    style={{ fontFamily: "var(--font-alan)" }}
                   >
                     {deal.cashback}
                   </h3>
@@ -271,7 +271,7 @@ export default function TopDealsSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="bg-white/20 text-white px-10 py-3.5 rounded-full hover:bg-white/50 cursor-pointer transition-colors text-[15px] font-medium"
-          style={{ fontFamily: "var(--font-space-grotesk)" }}
+          style={{ fontFamily: "var(--font-alan)" }}
         >
           Voir toutes les catégories
         </motion.button>

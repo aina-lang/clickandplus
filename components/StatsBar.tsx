@@ -51,14 +51,14 @@ export default function StatsBar() {
           {stats.map((stat, idx) => (
             <div key={stat.label} className="flex items-center gap-16">
               <div className="flex items-center flex-col gap-3 text-center">
-                <span className="text-dark leading-tight font-alan font-bold text-4xl">
+                <span className="text-dark leading-tight font-bold text-4xl" style={{ fontFamily: "var(--font-alan)" }}>
                   <AnimatedNumber
                     target={stat.target}
                     suffix={stat.suffix}
                     prefix={stat.prefix}
                   />
                 </span>
-                <span className="text-muted font-alan font-normal text-base">
+                <span className="text-muted font-normal text-base" style={{ fontFamily: "var(--font-alan)" }}>
                   {stat.label}
                 </span>
               </div>

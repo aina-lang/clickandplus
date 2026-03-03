@@ -58,7 +58,7 @@ export default function TopCashbacksSection() {
                             onClick={() => setActiveTab(tab)}
                             className={`pb-4 font-bold text-[15px] tracking-wide transition-colors relative cursor-pointer ${activeTab === tab ? "text-dark" : "text-gray-400 hover:text-gray-600"
                                 }`}
-                            style={{ fontFamily: "var(--font-space-grotesk)", letterSpacing: "0.5px" }}
+                            style={{ fontFamily: "var(--font-alan)", letterSpacing: "0.5px" }}
                         >
                             {tab}
                             {activeTab === tab && (
@@ -87,14 +87,14 @@ export default function TopCashbacksSection() {
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: i * 0.05, duration: 0.45 }}
                             className={`relative flex flex-col items-center px-4 py-6 cursor-pointer rounded-2xl transition-all duration-200 ${isActive
-                                    ? "border-2 border-dark bg-white shadow-sm z-10"
-                                    : "border-2 border-transparent hover:border-gray-200 hover:bg-white/70"
+                                ? "border-2 border-dark bg-white shadow-sm z-10"
+                                : "border-2 border-transparent hover:border-gray-200 hover:bg-white/70"
                                 }`}
                         >
                             {/* Top percentage */}
                             <span
                                 className="absolute top-3 right-4 text-[12px] text-gray-400 font-medium line-through"
-                                style={{ fontFamily: "var(--font-space-grotesk)" }}
+                                style={{ fontFamily: "var(--font-alan)" }}
                             >
                                 {item.top}
                             </span>
@@ -110,7 +110,7 @@ export default function TopCashbacksSection() {
                             {/* Cashbacks label */}
                             <span
                                 className="text-dark font-bold text-[13px] mb-2"
-                                style={{ fontFamily: "var(--font-space-grotesk)" }}
+                                style={{ fontFamily: "var(--font-alan)" }}
                             >
                                 Cashbacks
                             </span>
@@ -119,7 +119,7 @@ export default function TopCashbacksSection() {
                             <div
                                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-bold text-[14px] ${item.featured ? "bg-dark text-white" : "bg-[#f5d90a] text-dark"
                                     }`}
-                                style={{ fontFamily: "var(--font-space-grotesk)" }}
+                                style={{ fontFamily: "var(--font-alan)" }}
                             >
                                 {item.rate}
                                 <div
@@ -142,7 +142,7 @@ export default function TopCashbacksSection() {
                 >
                     <button
                         className="bg-dark text-white font-bold px-12 py-4 rounded-full hover:opacity-90 transition-opacity cursor-pointer text-[16px]"
-                        style={{ fontFamily: "var(--font-space-grotesk)" }}
+                        style={{ fontFamily: "var(--font-alan)" }}
                     >
                         Voir toutes les offres
                     </button>

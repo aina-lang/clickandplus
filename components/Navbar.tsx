@@ -62,7 +62,7 @@ export default function Navbar() {
           <LogoIcon className="w-[100px] h-[62px]" />
           <span
             className="hidden xl:block text-[#000] text-[14px]"
-            style={{ fontFamily: "var(--font-poppins)", fontWeight: 400 }}
+            style={{ fontFamily: "var(--font-alan)", fontWeight: 400 }}
           >
             Plus de 5 millions de deals disponibles dans plusieurs pays.
           </span>
@@ -79,7 +79,7 @@ export default function Navbar() {
             type="text"
             placeholder="Rechercher"
             className="bg-transparent text-[14px] flex-1 outline-none placeholder-dark/40"
-            style={{ fontFamily: "var(--font-poppins)" }}
+            style={{ fontFamily: "var(--font-alan)" }}
           />
           <div className="w-8 h-8 rounded-full bg-[#FFF6D8] flex items-center justify-center shrink-0 absolute right-2">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -102,7 +102,7 @@ export default function Navbar() {
             >
               <span
                 className="text-dark font-bold text-[16px]"
-                style={{ fontFamily: "var(--font-space-grotesk)" }}
+                style={{ fontFamily: "var(--font-alan)" }}
               >
                 Mon compte
               </span>
@@ -116,7 +116,7 @@ export default function Navbar() {
                 exit={{ opacity: 0, y: -8, scale: 0.97 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
                 className="absolute top-full mt-2 left-0 w-48 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden z-[60]"
-                style={{ fontFamily: "var(--font-space-grotesk)" }}
+                style={{ fontFamily: "var(--font-alan)" }}
               >
                 <a href="#" onClick={() => { setAccountOpen(false); setMobileOpen(false); }} className="block px-4 py-3 bg-[#FFF6D8] hover:bg-[#FFEAA8] transition-colors font-bold text-sm">
                   S&apos;inscrire
@@ -130,7 +130,7 @@ export default function Navbar() {
 
           <button
             className="bg-dark text-white px-6 py-2 rounded-full font-bold text-[15px] hover:opacity-90 transition-opacity"
-            style={{ fontFamily: "var(--font-space-grotesk)" }}
+            style={{ fontFamily: "var(--font-alan)" }}
           >
             Nous contactez
           </button>
@@ -178,7 +178,7 @@ export default function Navbar() {
                 <GridIcon className="w-[18px] h-[18px] text-yellow" />
                 <span
                   className="text-dark font-bold text-[15px]"
-                  style={{ fontFamily: "var(--font-space-grotesk)" }}
+                  style={{ fontFamily: "var(--font-alan)" }}
                 >
                   Toutes les catégories
                 </span>
@@ -208,7 +208,7 @@ export default function Navbar() {
                       }
                     }}
                     className={`flex items-center gap-1 text-dark font-bold text-[15px] transition-opacity hover:opacity-100 ${activeNavItem === item.label ? "opacity-100" : "opacity-70"}`}
-                    style={{ fontFamily: "var(--font-space-grotesk)" }}
+                    style={{ fontFamily: "var(--font-alan)" }}
                   >
                     {item.label}
                     {item.hasChevron && (
@@ -223,7 +223,7 @@ export default function Navbar() {
                       exit={{ opacity: 0, y: -8, scale: 0.97 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
                       className="absolute top-full mt-2 left-0 w-48 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden z-[60]"
-                      style={{ fontFamily: "var(--font-space-grotesk)" }}
+                      style={{ fontFamily: "var(--font-alan)" }}
                     >
                       <a
                         href="#"

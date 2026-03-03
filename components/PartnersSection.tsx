@@ -52,13 +52,13 @@ export default function PartnersSection() {
               onClick={() => setActiveAlpha(letter)}
               className="relative flex items-center cursor-pointer gap-1 font-semibold transition-colors shrink-0 p-1 "
               style={{
-                fontFamily: "var(--font-space-grotesk)",
+                fontFamily: "var(--font-alan)",
                 fontSize: "clamp(14px, 1.3vw, 22px)",
                 letterSpacing: "-1.30px",
                 color: activeAlpha === letter ? "#0b0c0c" : "#0b0c0c",
-                backgroundColor: letter === "Populaire"? "#FFF6D8" : "transparent",
+                backgroundColor: letter === "Populaire" ? "#FFF6D8" : "transparent",
                 borderRadius: "5px",
-              
+
               }}
             >
               {letter === "Populaire" && (
@@ -105,13 +105,13 @@ export default function PartnersSection() {
               <div className="text-left  w-full  -mt-10">
                 <p
                   className="text-dark/40 font-medium text-xs mb-1 uppercase tracking-wider text-left"
-                  style={{ fontFamily: "var(--font-space-grotesk)" }}
+                  style={{ fontFamily: "var(--font-alan)" }}
                 >
                   {partner.name}
                 </p>
                 <p
                   className="text-dark font-bold text-sm"
-                  style={{ fontFamily: "var(--font-space-grotesk)" }}
+                  style={{ fontFamily: "var(--font-alan)" }}
                 >
                   {partner.cashback.replace(" cashback", "")}
                 </p>

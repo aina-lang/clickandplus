@@ -5,7 +5,7 @@ import { motion, useInView, Variants, AnimatePresence } from "framer-motion";
 import ArrowPrevIcon from "@/assets/icons/arrow-prev.svg";
 import ArrowNextIcon from "@/assets/icons/arrow-next.svg";
 import InfoIcon from "@/assets/icons/info-1.svg";
-import ChanelLogo from "@/assets/icons/chanel-logo.svg";
+
 import Image from "next/image";
 
 interface OfferCard {
@@ -24,7 +24,7 @@ const offers: OfferCard[] = [
     id: 1,
     imageSrc: "/images/shoes.png",
     brand: "CHANEL",
-    brandLogo: ChanelLogo,
+    brandLogo: "/icons/chanel-logo.svg",
     title: "Dès 20€ d'achat",
     type: "LIVRAISON OFFERTE",
     sponsored: true,
@@ -209,7 +209,7 @@ export default function OffersSection() {
 
                       {/* Activer l'offre Button Overlay */}
                       <div className="absolute inset-0 flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <button className="bg-yellow cursor-pointer hover:bg-yellow-muted transition-colors text-dark font-bold py-3.5 px-7 rounded-full shadow-xl text-sm whitespace-nowrap">
+                        <button className="bg-yellow cursor-pointer hover:bg-yellow-muted transition-colors text-dark font-bold py-3.5 px-7 rounded-full shadow-xl text-sm whitespace-nowrap" style={{ fontFamily: "var(--font-alan)" }}>
                           Activer l'offre
                         </button>
                       </div>

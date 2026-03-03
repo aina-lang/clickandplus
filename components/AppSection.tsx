@@ -37,7 +37,7 @@ export default function AppSection() {
             <h3
               className="text-[#131313] font-bold text-center leading-tight"
               style={{
-                fontFamily: "var(--font-space-grotesk)",
+                fontFamily: "var(--font-alan)",
                 fontSize: "clamp(22px, 2.4vw, 36px)",
                 letterSpacing: "-1.2px",
               }}
@@ -54,19 +54,19 @@ export default function AppSection() {
               <div className="flex flex-col items-start gap-3 relative">
                 <Image src={"/images/chrome.png"} className="" alt="chrome" width={64} height={64} />
                 <Image src={"/images/firefox.png"} className="absolute top-0 left-10 " alt="firefox" width={64} height={64} />
-                 <div className="flex justify-center">
-              <button
-                className="bg-dark text-white font-bold px-10 py-3 rounded-full hover:opacity-90 transition-opacity cursor-pointer text-lg"
-                style={{ fontFamily: "var(--font-space-grotesk)", letterSpacing: "-0.5px" }}
-              >
-                Ajouter a chrome
-              </button>
-            </div>
+                <div className="flex justify-center">
+                  <button
+                    className="bg-dark text-white font-bold px-10 py-3 rounded-full hover:opacity-90 transition-opacity cursor-pointer text-lg"
+                    style={{ fontFamily: "var(--font-alan)", letterSpacing: "-0.5px" }}
+                  >
+                    Ajouter a chrome
+                  </button>
+                </div>
               </div>
             </div>
 
             {/* CTA */}
-           
+
           </motion.div>
 
           {/* ── Right: App ── */}
@@ -79,7 +79,7 @@ export default function AppSection() {
             <h3
               className="text-[#131313] font-bold text-center leading-tight"
               style={{
-                fontFamily: "var(--font-space-grotesk)",
+                fontFamily: "var(--font-alan)",
                 fontSize: "clamp(22px, 2.4vw, 36px)",
                 letterSpacing: "-1.2px",
               }}
@@ -90,7 +90,7 @@ export default function AppSection() {
             {/* Phone mockup + store buttons side by side */}
             <div className="flex items-center justify-center gap-8">
               {/* Phone outline mockup */}
-           <Image src={"/images/phone.png"} alt="phone" width={100} height={100} />
+              <Image src={"/images/phone.png"} alt="phone" width={100} height={100} />
               {/* Store buttons stacked */}
               <div className="flex flex-col gap-3">
                 {/* Google Play */}
@@ -102,13 +102,13 @@ export default function AppSection() {
                   <div className="flex flex-col text-left leading-tight">
                     <span
                       className="text-white/70 text-[11px]"
-                      style={{ fontFamily: "var(--font-space-grotesk)" }}
+                      style={{ fontFamily: "var(--font-alan)" }}
                     >
                       Disponible sur
                     </span>
                     <span
                       className="text-white font-bold text-[17px]"
-                      style={{ fontFamily: "var(--font-space-grotesk)", letterSpacing: "-0.5px" }}
+                      style={{ fontFamily: "var(--font-alan)", letterSpacing: "-0.5px" }}
                     >
                       Google Play
                     </span>
@@ -124,13 +124,13 @@ export default function AppSection() {
                   <div className="flex flex-col text-left leading-tight">
                     <span
                       className="text-white/70 text-[11px]"
-                      style={{ fontFamily: "var(--font-space-grotesk)" }}
+                      style={{ fontFamily: "var(--font-alan)" }}
                     >
                       Disponible sur
                     </span>
                     <span
                       className="text-white font-bold text-[17px]"
-                      style={{ fontFamily: "var(--font-space-grotesk)", letterSpacing: "-0.5px" }}
+                      style={{ fontFamily: "var(--font-alan)", letterSpacing: "-0.5px" }}
                     >
                       App Store
                     </span>

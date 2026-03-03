@@ -186,15 +186,15 @@ export default function ReviewsSection() {
             </div>
             {/* <TrustpilotStars /> */}
             <div className="flex flex-col leading-tight">
-              <span className="text-[#0d0d0d] font-bold text-xl" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+              <span className="text-[#0d0d0d] font-bold text-xl" style={{ fontFamily: "var(--font-alan)" }}>
                 Excellent 4.6 sur 5
               </span>
-              <span className="text-[#6b6b6b] text-sm" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+              <span className="text-[#6b6b6b] text-sm" style={{ fontFamily: "var(--font-alan)" }}>
                 +20 000 avis vérifiés
               </span>
             </div>
           </div>
-          <p className="text-[#0d0d0d] text-center " style={{ fontFamily: "var(--font-space-grotesk)", fontSize: "18px", fontWeight: 400 }}>
+          <p className="text-[#0d0d0d] text-center " style={{ fontFamily: "var(--font-alan)", fontSize: "18px", fontWeight: 400 }}>
             Chaque jour, nos clients économisent et partagent leur avis.
           </p>
         </motion.div>
@@ -242,13 +242,13 @@ export default function ReviewsSection() {
                   </div>
                 )}
                 <div className="flex flex-col gap-1">
-                  <span className="text-[#0d0d0d] font-semibold leading-tight" style={{ fontFamily: "var(--font-space-grotesk)", fontSize: 15 }}>
+                  <span className="text-[#0d0d0d] font-semibold leading-tight" style={{ fontFamily: "var(--font-alan)", fontSize: 15 }}>
                     {review.name}
                   </span>
                   <GreenStars count={5} />
                 </div>
               </div>
-              <p className="text-[#0d0d0d] opacity-80 flex-1" style={{ fontFamily: "var(--font-poppins)", fontWeight: 400, fontSize: "14px", lineHeight: "22px" }}>
+              <p className="text-[#0d0d0d] opacity-80 flex-1" style={{ fontFamily: "var(--font-alan)", fontWeight: 400, fontSize: "14px", lineHeight: "22px" }}>
                 {review.text}
               </p>
             </div>
@@ -266,13 +266,13 @@ export default function ReviewsSection() {
         >
           <button
             className="px-8 py-3 rounded-full font-bold text-dark cursor-pointer hover:brightness-95 transition-all"
-            style={{ background: "#ffde77", fontFamily: "var(--font-space-grotesk)", fontSize: 17 }}
+            style={{ background: "#ffde77", fontFamily: "var(--font-alan)", fontSize: 17 }}
           >
             Lire plus d&apos;avis
           </button>
           <button
             className="flex items-center gap-2 px-8 py-3 rounded-full bg-dark text-white font-bold cursor-pointer hover:opacity-90 transition-all"
-            style={{ fontFamily: "var(--font-space-grotesk)", fontSize: 17 }}
+            style={{ fontFamily: "var(--font-alan)", fontSize: 17 }}
           >
             <CommentIcon className="w-5 h-5" />
             Laisser mon avis

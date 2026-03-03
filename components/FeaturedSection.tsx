@@ -65,12 +65,11 @@ export default function FeaturedSection() {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`px-6 py-2.5 rounded-full font-bold transition-all text-[15px] cursor-pointer ${
-                    activeTab === tab
+                  className={`px-6 py-2.5 rounded-full font-bold transition-all text-[15px] cursor-pointer ${activeTab === tab
                       ? "bg-dark text-white shadow-sm"
                       : "bg-white text-dark border border-gray-200 hover:bg-gray-50"
-                  }`}
-                  style={{ fontFamily: "var(--font-space-grotesk)" }}
+                    }`}
+                  style={{ fontFamily: "var(--font-alan)" }}
                 >
                   {tab}
                 </button>
@@ -113,7 +112,7 @@ export default function FeaturedSection() {
               <div className="flex items-center justify-between mb-6">
                 <h3
                   className="font-bold text-2xl text-dark"
-                  style={{ fontFamily: "var(--font-space-grotesk)" }}
+                  style={{ fontFamily: "var(--font-alan)" }}
                 >
                   {cat.name}
                 </h3>
@@ -121,7 +120,7 @@ export default function FeaturedSection() {
                   className="px-4 py-1.5 rounded-full font-bold text-sm text-dark"
                   style={{
                     background: "var(--color-yellow)",
-                    fontFamily: "var(--font-space-grotesk)",
+                    fontFamily: "var(--font-alan)",
                   }}
                 >
                   {cat.badge}
@@ -143,7 +142,7 @@ export default function FeaturedSection() {
                     </div>
                     <span
                       className="text-dark font-semibold text-center text-[14px]"
-                      style={{ fontFamily: "var(--font-space-grotesk)" }}
+                      style={{ fontFamily: "var(--font-alan)" }}
                     >
                       {item.label}
                     </span>
@@ -155,7 +154,7 @@ export default function FeaturedSection() {
               <div className="flex justify-center mt-8">
                 <button
                   className="bg-dark text-white font-bold px-10 py-3.5 rounded-full hover:opacity-90 transition-opacity cursor-pointer text-[15px]"
-                  style={{ fontFamily: "var(--font-space-grotesk)" }}
+                  style={{ fontFamily: "var(--font-alan)" }}
                 >
                   Voir tous les produits
                 </button>

@@ -80,12 +80,11 @@ export default function BestDealsSection() {
                   />
                   {/* Category badge */}
                   <span
-                    className={`absolute top-3 left-3 px-3 py-1.5 rounded-full text-[13px] font-semibold ${
-                      deal.categoryHighlight
+                    className={`absolute top-3 left-3 px-3 py-1.5 rounded-full text-[13px] font-semibold ${deal.categoryHighlight
                         ? "bg-[#f5d90a] text-dark"
                         : "bg-white text-dark"
-                    }`}
-                    style={{ fontFamily: "var(--font-space-grotesk)" }}
+                      }`}
+                    style={{ fontFamily: "var(--font-alan)" }}
                   >
                     {deal.category}
                   </span>
@@ -101,7 +100,7 @@ export default function BestDealsSection() {
               <p
                 className="text-dark text-center whitespace-pre-line mt-8 mb-5 leading-relaxed"
                 style={{
-                  fontFamily: "var(--font-poppins)",
+                  fontFamily: "var(--font-alan)",
                   fontWeight: 400,
                   fontSize: "14px",
                 }}
