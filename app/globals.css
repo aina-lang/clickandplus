@@ -1,26 +1,115 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-page: #ffffff;
+  --color-dark: #0b0c0c;
+  --color-darker: #0d0d0d;
+  --color-yellow: #ffd03e;
+  --color-yellow-muted: #ffde77;
+  --color-green-tp: #00b67a;
+  --color-muted: #949494;
+  --color-card: #ffffff;
+  --color-review-card: #f6f6f6;
+  --color-help-card: #fffdf6;
+  --color-golden: #e1c672;
+  --color-body-text: #131313;
+  --color-hero-bg: #e4e4e4;
+  --color-footer-input: #212121;
+  --color-gray-border: #707070;
+
+  --font-alan: var(--font-space-grotesk);
+  --font-body: var(--font-poppins);
+  --font-display: var(--font-manrope);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #fcfcfc;
+    color: #131313;
+    font-family: var(--font-poppins), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .section-container {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .btn-dark {
+    background-color: #0b0c0c;
+    color: #ffffff;
+    border-radius: 43px;
+    padding: 16px 32px;
+    font-family: var(--font-poppins), sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+  }
+
+  .btn-dark:hover {
+    opacity: 0.85;
+  }
+
+  .btn-outline-dark {
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    font-family: var(--font-poppins), sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .btn-outline-dark:hover {
+    opacity: 0.75;
+  }
+
+  .section-heading {
+    font-family: var(--font-space-grotesk), sans-serif;
+    font-weight: 600;
+    font-size: 51px;
+    letter-spacing: -2.65px;
+    color: #0b0c0c;
+  }
+
+  .card-hover {
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@utility scrollbar-hidden {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
